@@ -1,0 +1,1188 @@
+/* styles.css */
+
+/* Restablecemos los márgenes y el padding por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden; 
+}
+/* Resto del CSS... */
+
+.header-title {
+  text-align: left;
+  margin-left: 0.5rem;
+  position: absolute;
+  width: 90%;
+  top: 70%;
+  transform: translateY(-50%);
+  color: white;
+}
+
+
+.header-title h1 {
+  font-size: 1.5rem; /* Tamaño ajustado para móviles */
+  margin-bottom: 0.5rem;
+}
+.header-title p {
+  font-size: 1rem;
+  width: 70%;
+}
+
+.header-buttons {
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  transform: translateX(-50%) translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center; /* Centra los botones cuando están apilados */
+}
+
+/* Estilos comunes para ambos botones/enlaces */
+.header-buttons a {
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  width: 80%; /* Ajustado para móviles */
+}
+
+/* Estilos específicos para el botón rojo */
+.header-buttons .button-red {
+  background-color: red;
+  color: white;
+  border: none;
+}
+
+/* Estilos específicos para el botón transparente */
+.header-buttons .button-transparent {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+header {
+  background-image: url('imagenes/hero-copy-p-1080.webp');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  position:relative;
+  z-index: 20; /* Esto permite posicionar absolutamente el logo respecto a este contenedor */
+  padding: 1rem; /* Espacio alrededor del contenido del encabezado, ajusta según necesidad */
+}
+
+/* Estilos para el logo y menú */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 0.5rem;
+}
+.logo img {
+  height: 50px; /* Ajusta este valor según el tamaño deseado para tu logo */
+  width: 80px;
+}
+
+.nav-container {
+  position: absolute; /* Puedes ajustar esta propiedad si deseas posicionar el contenedor de enlaces específicamente */
+  right: 0px; /* Ajusta este valor según necesidad */
+  top: 0px; /* Ajusta si deseas cambiar la posición vertical */
+  background-color: white;
+  border-radius: 0px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem;
+}
+/* Botón de menú para móviles */
+.menu-btn {
+  position: absolute;
+  display: none;
+  cursor: pointer;
+}
+
+/* Ocultar los enlaces en pantallas pequeñas */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .nav-links a, .contact-link {
+    display: block;
+  }
+
+  /* Mostrar el botón de menú */
+  .menu-btn {
+    display: block;
+  }
+}
+
+/* Checkbox para manejar el estado del menú */
+#menu-toggle {
+  display: none; /* Oculta el checkbox */
+}
+
+/* Usar el checkbox para mostrar/ocultar los enlaces */
+#menu-toggle:checked + .nav-links {
+  display: flex;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin-right: 1rem;
+}
+
+.nav-links li {
+  padding: 0 20px;
+}
+
+.nav-links a, .contact-link {
+  color: #333;
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: background-color 0.3s;
+}
+
+
+.contact-link:focus {
+  background-color: #f2f2f2;
+}
+
+.contact-link {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.logo img {
+  height: 50px; /* Ajusta este valor según el tamaño deseado para tu logo */
+  width: 80px;
+}
+
+/* Media query para tabletas */
+@media (min-width: 768px) {
+  .header-title {
+    top: 60%;
+    left: 1%;
+    width: 70%; /* Ampliar para tabletas */  }
+
+  .header-title h1 {
+    font-size: 2.5rem; /* Aumentar tamaño para tabletas */
+  }
+
+  .header-title p {
+    font-size: 1.5rem;
+    width: 80%; /* Ampliar para una mejor lectura en tabletas */
+  }
+
+  .header-buttons {
+    top: 80%; /* Ajustar posición vertical */
+    left: 70%; /* Alineación con el título */
+    flex-direction: row; /* Cambiar a fila para tabletas */
+    gap: 20px;
+  }
+
+  .header-buttons a {
+    width: auto; /* Ajuste automático del ancho */
+  }
+  
+  .nav-links {
+    display: flex; /* Mostrar en tabletas */
+    flex-direction: row; /* Cambiar a fila para tabletas */
+  }
+
+  .logo img {
+    height: 60px; /* Aumentar tamaño del logo */
+  }
+   .nav-container {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: white;
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Para Dispositivos Más Grandes */
+@media (min-width: 1024px) {
+ 
+  .header-title {
+    top: 60%;
+    left: 1%;
+    width: 70%; /* Ampliar para tabletas */
+  }
+
+  .header-title h1 {
+    font-size: 3rem; /* Aumentar tamaño para tabletas */
+  }
+
+  .header-title p {
+    font-size: 1.75rem; /* Tamaño del subtítulo ajustado */
+    width: 80%; /* Ampliar para una mejor lectura en tabletas */
+  }
+
+  .header-buttons {
+    top: 80%; /* Ajustar posición vertical para alinearse con el título */
+    flex-direction: row; /* Cambiar a fila para tabletas */
+    gap: 20px;
+    left: 70%; /* Alineación con el título */
+  }
+
+  .nav-container {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: white;
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links li {
+    padding: 0 1rem; /* Espacio entre elementos del menú */
+  }
+
+  .contact-link {
+    padding: 0.75em 1.5em; /* Botón de contacto más destacado */
+    margin-left: 2rem; /* Espacio desde el último enlace del menú */
+  }
+
+  .logo img {
+    height: 80px; /* Tamaño del logo ajustado para escritorio */
+    width: auto; /* Ajuste automático del ancho */
+  }
+}
+
+/* Base y estilos generales */
+.intro-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: #000;
+  color: #fff;
+}
+
+.intro-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-text h2, .intro-text p {
+  margin-bottom: 1rem;
+}
+
+.intro-text h2 {
+  font-size: 2rem;
+}
+
+.intro-text p {
+  flex: 1;
+}
+
+.text-and-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.see-models-button {
+  background-color: transparent;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.see-models-button:hover {
+  background-color: #e0e0e0;
+}
+
+.intro-text, .intro-image {
+  flex: 1 1 50%;
+  max-width: 48%;
+}
+
+.intro-image img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .intro-section {
+    padding: 1rem;
+  }
+
+  .intro-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .text-and-button {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .see-models-button {
+    margin-top: 1rem;
+  }
+
+  .intro-text, .intro-image {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .intro-image img {
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-text h2 {
+    font-size: 1.25rem;
+  }
+}
+
+
+
+.main-container {
+  height: 70vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #333;
+}
+
+.text-container {
+  text-align: center;
+}
+
+.text-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.text-container p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+/* Estilos base del botón de llamada a la acción (CTA) */
+.text-container .cta-button {
+  background-color: #007bff; /* Color de fondo sólido para mayor visibilidad */
+  color: white; /* Color de texto blanco para contraste */
+  border: none; /* Sin bordes para un look más limpio */
+  padding: 12px 25px; /* Espaciado interno más generoso */
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block; /* Para que el botón se trate como un elemento en línea con bloque */
+  margin-top: 15px; /* Espacio adicional encima del botón */
+  margin-bottom: 30px; /* Espacio adicional debajo del contenedor de imágenes antes de los botones */
+
+}
+
+/* Efecto hover del botón CTA */
+.text-container .cta-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Eleva ligeramente el botón al pasar el mouse */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para el efecto de elevación */
+}
+
+/* Estilos del contenedor del carrusel */
+.carousel-wrapper {
+  width: 80vw;
+  overflow: hidden; /* Oculta las imágenes que se salen del contenedor */
+  position: relative;
+}
+
+/* Alineación y disposición de las imágenes */
+.images-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* o center para centrar las imágenes */
+  gap: 20px; /* Espacio entre las imágenes y descripciones */
+  margin-bottom: 10px; /* Espacio adicional debajo del contenedor de imágenes antes de los botones */
+}
+
+/* Estilos para las descripciones de las imágenes */
+.image-description {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 1rem; /* Tamaño más adaptable para diferentes pantallas */
+  color: #fff; /* Color de texto que contrasta con el fondo */
+}
+
+/* Ajustes de tamaño y posición para las imágenes */
+.images-container img {
+  width: 50vw; /* Hace que el ancho de la imagen sea la mitad del ancho de la ventana del navegador */
+  max-width: 100%; /* Asegura que la imagen no sea más ancha que su contenedor */
+  height: auto; /* Ajusta la altura automáticamente para mantener la proporción de la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra completamente el área designada, posiblemente recortando la imagen */
+  margin: 10px; /* Añade un margen alrededor de cada imagen */
+}
+
+
+/* Estilos para el contenedor de botones de navegación del carrusel */
+.buttons-container {
+  display: flex;
+  justify-content: center; /* Centra los botones si es necesario */
+  gap: 5px; /* Espacio entre los botones */
+  padding-top: 10px; /* Espacio por encima de los botones si están debajo de las imágenes */
+}
+
+/* Estilos para los botones de navegación del carrusel */
+.carousel-btn {
+  background-color: #fff; /* Botones con fondo blanco para contraste */
+  color: #333; /* Color de texto oscuro para legibilidad */
+  border: none; /* Sin bordes para un look más limpio */
+  padding: 8px 16px; /* Espaciado interno más generoso */
+  margin: 0 10px; /* Espacio entre botones */
+  font-size: 18px; /* Tamaño de texto más adecuado */
+  border-radius: 50%; /* Botones redondos */
+}
+
+.carousel-btn:hover {
+  background-color: #ddd; /* Color de fondo al pasar el mouse */
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    /* Cambia la altura a auto para dispositivos móviles */
+    height: auto;
+    padding: 4rem; /* Ajusta el padding según necesites */
+    
+  }
+
+  
+  .text-container, .carousel-wrapper {
+    width: 100%;
+  }
+
+  .carousel-btn {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+
+  /* Ajusta aquí otros estilos que necesiten cambiar en dispositivos móviles */
+}
+@media (max-width: 480px) {
+  /* Ajustes adicionales para pantallas muy pequeñas */
+  .text-container h2 {
+    font-size: 1.25rem; /* Reduce aún más para pantallas muy pequeñas */
+  }
+
+  .images-container img {
+    width: 90vw; /* Hace las imágenes más grandes para llenar el espacio */
+  }
+}
+
+
+
+
+
+
+.new-section {
+  background: url('imagenes/28pickup-3-p-1080.webp') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 100px 0; /* Ajusta el padding según sea necesario */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh; /* Ajusta esto según el diseño que desees */
+  width: 100%;
+  /*-webkit-clip-path: polygon(0% 0%, 50% 0%, 50% 30px, 100% 30px, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 50% 0%, 50% 30px, 100% 30px, 100% 100%, 0% 100%);*/
+}
+
+.new-content {
+  max-width: 600px; /* Ajusta o elimina esta línea según la necesidad de tu diseño */
+}
+
+.new-section h2 {
+  font-size: 2.5em; /* Ajusta esto según tu diseño */
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.new-section p {
+  font-size: 1.2em;
+  font-style: italic;
+}
+.custom-section {
+  background: url('imagenes/24-copy-p-500.webp') no-repeat center center / cover; /* Asegúrate de reemplazar 'tu-imagen-de-fondo.jpg' con el camino correcto a tu imagen */
+  position: relative;
+  color: white; /* O el color que mejor se ajuste a tu diseño */
+  display: flex;
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: flex-start; /* Alinea el contenido horizontalmente hacia la izquierda */
+  padding: 50px; /* Ajusta el padding según tus necesidades */
+  height: 100vh; /* Ajusta la altura según tus necesidades */
+}
+
+.content {
+  max-width: 500px; /* Ajusta el ancho máximo del contenido si es necesario */
+}
+
+.content h2 {
+  font-size: 2em; /* Ajusta el tamaño de la fuente según tus necesidades */
+  /* Añade estilos adicionales si lo deseas */
+}
+
+.content p {
+  font-size: 1em; /* Ajusta el tamaño de la fuente según tus necesidades */
+  /* Añade estilos adicionales si lo deseas */
+}
+
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Esto crea un espacio entre las cajas de servicios */
+  justify-content: flex-start;
+  margin: 0 auto;
+  max-width: 1200px; /* O el ancho máximo que prefieras */
+  padding: 20px;
+}
+
+.service {
+  flex: 1 1 calc(25% - 20px); /* Intenta ocupar el 25% del espacio, menos el 'gap' */
+  max-width: calc(25% - 20px); /* Establece un ancho máximo para evitar que se estire demasiado */
+  box-sizing: border-box;
+  margin-bottom: 20px; /* Espacio adicional para cuando los elementos se envuelven a la siguiente línea */
+}
+
+.service h3 {
+  font-size: 1.2em;
+  color: #000;
+  margin-bottom: 0.5em;
+  opacity: 0.5; /* Establece la opacidad inicial para la descripción */
+
+}
+
+.service p {
+  opacity: 0.5; /* Establece la opacidad inicial para la descripción */
+  border-bottom: 2px solid transparent; /* Línea transparente por defecto */
+  font-size: 1em;
+  color: #333;
+  transition: opacity 0.3s ease, border-bottom-color 0.3s ease; /* Transición suave para la opacidad y el color del borde */
+
+}
+.service:hover h3 {
+  opacity: 1; /* Opacidad completa al pasar el mouse */
+  color: red;
+}
+.service:hover p {
+  opacity: 1; /* Opacidad completa al pasar el mouse */
+  border-bottom: 2px solid red; /* Línea roja al pasar el mouse */
+  padding-bottom: 8px; /* Espacio entre el texto y la línea del borde */
+}
+
+
+/* Ajustes para responsividad */
+@media (max-width: 1024px) {
+  .service {
+    flex-basis: calc(50% - 20px); /* Cada servicio toma el 50% del ancho en pantallas más pequeñas */
+    max-width: calc(50% - 20px); /* Establece un ancho máximo para pantallas medianas */
+  }
+}
+
+@media (max-width: 768px) {
+  .service {
+    flex-basis: 100%; /* Cada servicio toma el 100% del ancho en pantallas aún más pequeñas */
+    max-width: 100%; /* Asegúrate de que se extienda completamente */
+  }
+}
+
+.feature-section {
+  position: relative;
+  background-image: url('imagenes/28pickup-3-p-1080.webp');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrado en móviles */
+  padding: 20px; /* Padding ajustado para espacios pequeños */
+}
+
+.feature-content {
+  z-index: 2;
+  color: white;
+  text-align: center; /* Texto centrado en móviles */
+}
+
+.feature-section h2 {
+  font-size: 1.5rem; /* Tamaño de fuente reducido para pantallas pequeñas */
+  margin-bottom: 1rem;
+}
+
+.feature-section p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0 10px; /* Asegura que el texto no toque los bordes de la pantalla */
+}
+.btn, .btn-full, .btn-outline {
+  text-decoration: none; /* Aplica a todas las variantes de botones */
+  /* Otros estilos comunes de tu botón */
+}
+
+.feature-buttons .btn {
+  margin: 10px 5px; /* Espacio alrededor de botones para toques fáciles */
+  padding: 10px 15px;
+  border: 2px solid #C9302C;
+  color: white;
+  background-color: #C9302C;
+  display: inline-block;
+}
+
+.feature-buttons .btn.btn-outline {
+  background-color: transparent;
+  color: white;
+}
+
+.feature-buttons .btn:hover {
+  background-color: #b9a8a8; /* Color más oscuro al pasar el ratón */
+  color: #fff;
+}
+
+.feature-image-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+/* Para tabletas */
+@media (min-width: 768px) {
+  .feature-section h2 {
+    font-size: 2rem; /* Tamaño más grande para tabletas */
+  }
+
+  .feature-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .feature-content {
+    max-width: 600px; /* Limita el ancho del contenido para mejor legibilidad */
+    text-align: left; /* Alineación a la izquierda para más espacio */
+  }
+
+  .feature-buttons .btn {
+    margin: 0 10px; /* Aumenta espacio entre botones */
+  }
+}
+
+/* Para dispositivos de escritorio */
+@media (min-width: 1024px) {
+  .feature-section {
+    justify-content: flex-start; /* Contenido alineado a la izquierda */
+    padding-left: 50px; /* Más espacio al lado izquierdo */
+  }
+
+  .feature-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .feature-section p {
+    font-size: 1.4rem;
+    max-width: 500px; /* Controla el ancho del texto */
+  }
+
+  .feature-content {
+    align-items: start; /* Alineación al inicio para el contenido */
+    text-align: start;
+  }
+}
+
+
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: 1fr; /* Una sola columna para móviles por defecto */
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.main-image img {
+  width: 100%; /* Ajusta el ancho al 100% para que sea responsivo */
+  object-fit: cover; /* Asegura que la imagen cubra el espacio asignado */
+}
+
+.thumbnail-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Ajuste flexible para miniaturas */
+  gap: 20px;
+  overflow-y: auto;
+}
+
+.thumbnail-images img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Media query para tabletas */
+@media (min-width: 768px) {
+  .image-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas para la galería */
+  }
+
+  .main-image {
+    grid-column: 1 / 3; /* La imagen principal ocupa toda la fila */
+  }
+
+  .thumbnail-images {
+    grid-column: 1 / 3; /* Ajusta para que las miniaturas ocupen ambas columnas debajo de la imagen principal */
+    display: grid;
+    /* Define explícitamente dos columnas para las miniaturas */
+    grid-template-columns: repeat(2, 1fr);
+    /* Limita el contenedor a mostrar solo dos filas de miniaturas */
+    grid-auto-rows: minmax(150px, auto); /* Altura de cada fila para mostrar solo dos filas */
+    gap: 20px;
+    /* Establece una altura fija basada en la altura de las filas y el gap */
+    height: calc(2 * 150px + 20px); /* Ajusta basado en la altura de tus filas y el espacio entre ellas */
+    overflow-y: auto; /* Permite el desplazamiento vertical para más imágenes */
+    align-items: start; /* Alinea las miniaturas al inicio del contenedor */
+  }
+  
+  .thumbnail-images img {
+    width: 100%;
+    height: 100%; /* Mantiene la altura fija de las filas */
+    object-fit: cover;
+  }
+}
+
+
+
+/* Media query para dispositivos más grandes (desktops) */
+@media (min-width: 1024px) {
+  .image-gallery {
+    grid-template-columns: 2fr 1fr; /* Proporciones diferentes para desktops */
+  }
+
+  .main-image {
+    grid-column: 1 / 2; /* La imagen principal ocupa la primera columna */
+  }
+
+  .thumbnail-images {
+    grid-column: 2 / 3; /* Las miniaturas ocupan la segunda columna */
+    grid-template-columns: repeat(2, 1fr); /* Ajuste para que las miniaturas tengan dos columnas en desktop */
+  }
+}
+
+
+
+
+/* Estilos Base para la Sección FAQ */
+.faq-section {
+  display: flex;
+  flex-direction: column; /* Cambio inicial para móviles */
+  background-color: #202020;
+  color: #ffffff;
+  padding: 20px; /* Padding más pequeño para móviles */
+  box-sizing: border-box;
+  overflow-y: auto; /* Para manejar el contenido extenso */
+}
+
+/* Estilos para el Encabezado de FAQ */
+.faq-header {
+  text-align: center; /* Centrado en móviles */
+  padding-bottom: 20px; /* Espacio debajo del encabezado */
+}
+
+.faq-header h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+.faq-answer h2 {
+  font-size: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+/* Estilos para el Botón de FAQ */
+.faq-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Estilos para el Contenido de FAQ */
+.faq-content {
+  padding: 0; /* Sin padding inicial para móviles */
+}
+
+/* Estilos para Cada Item de FAQ */
+.faq-item {
+  margin-bottom: 20px; /* Espacio entre items */
+}
+
+/* Estilos para Pregunta y Botón Toggle */
+.faq-question {
+  display: flex;
+  justify-content: space-between; /* Ajusta esto a 'flex-start' si quieres que estén más cerca */
+  align-items: center;
+  padding-right: 1em; /* Asegúrate de que haya espacio en el lado derecho */
+}
+.faq-question h3 {
+  font-size: 1rem; /* Reduce el tamaño de la fuente de la pregunta */
+  margin: 0.5rem 0; /* Reduce el espacio arriba y abajo de la pregunta */
+}
+
+
+/* Estilos para el Botón Toggle */
+.faq-toggle {
+  cursor: pointer;
+}
+
+
+/* Estilos para la Respuesta */
+.faq-answer {
+  display: none;
+  padding-top: 20px;
+}
+
+
+/* Media Queries para Responsividad */
+
+/* Para Tabletas */
+@media (min-width: 768px) {
+  .faq-section {
+    flex-direction: row;
+    padding: 50px;
+  }
+
+  .faq-header {
+    flex-basis: 30%;
+    text-align: left;
+    padding-right: 20px;
+    border-right: 2px solid #ffffff;
+  }
+
+  .faq-content {
+    flex-basis: 70%;
+    padding-left: 20px;
+  }
+  .faq-answer {
+    display: none; /* Considera mostrar las respuestas por defecto en pantallas grandes, ajusta según necesidad */
+    max-width: 90%;
+  }
+  .faq-question {
+    padding-right: 2em; /* O lo que consideres adecuado para mantener el ícono cerca del texto */
+  }
+
+  .faq-toggle {
+    margin-left: auto; /* Esto empujará el botón hacia la derecha */
+  }
+}
+
+/* Para Dispositivos Más Grandes */
+@media (min-width: 1024px) {
+  .faq-header, .faq-content {
+    padding: 0 20px;
+  }
+
+  .faq-item {
+    padding: 20px;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-answer {
+    display: none; /* Considera mostrar las respuestas por defecto en pantallas grandes, ajusta según necesidad */
+    max-width: 90%;
+  }
+  .faq-question {
+    padding-right: 2em; /* O lo que consideres adecuado para mantener el ícono cerca del texto */
+  }
+
+  .faq-toggle {
+    margin-left: auto; /* Esto empujará el botón hacia la derecha */
+  }
+}
+
+
+.image-container {
+  margin: 20px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.half-image {
+  padding: 5px;
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+}
+
+.top {
+  top: 0;
+  height: 60vh;
+}
+
+.bottom {
+  bottom: 0;
+  height: 40vh;
+}
+
+.centered-content {
+  position: relative;
+  z-index: 1; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%; /* Ajustado para móviles */
+  text-align: center; /* Centrado para móviles */
+  background: white;
+  padding: 20px; /* Menor padding para móviles */
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.centered-content h2 {
+  text-align: left; /* O center si quieres centrar el título */
+  color: #000; /* Color del título, ajusta según tu diseño */
+  margin-bottom: 20px; /* Espacio entre el título y el contenedor de texto y botón */
+  font-size: 32px; /* Aumenta el tamaño del texto */
+  font-weight: bold; /* Hace el texto en negrita */
+}
+.text-with-button p {
+  margin-bottom: 20px; /* Aumenta el espacio debajo del párrafo */
+}
+
+.text-with-button {
+  display: flex;
+  flex-direction: column; /* Apila texto y botón verticalmente para móviles */
+  align-items: center;
+
+}
+
+.btn.btn-red {
+  background-color: #ff0000;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px; /* Bordes redondeados */
+  text-transform: uppercase; /* Letra en mayúsculas */
+  white-space: nowrap; /* Evita que el texto del botón se ajuste */
+  margin-top: 20px; /* Añade espacio encima del botón */
+
+}
+/* Para tabletas */
+@media (min-width: 768px) {
+  .image-container {
+    margin: 20px auto; /* Centra el contenedor si es necesario */
+    width: 90%; /* Ajusta el ancho para tabletas */
+    height: 80vh; /* Ajusta la altura para no ocupar toda la pantalla */
+  }
+
+  .centered-content {
+    left: 40%;
+    width: 70%; /* Ancho más grande para tabletas */
+    padding: 30px; /* Más padding para tabletas */
+    text-align: left; /* Texto alineado a la izquierda para más espacio */
+  }
+
+  .text-with-button {
+    flex-direction: row; /* Restablece a disposición horizontal */
+    justify-content: space-between;
+  }
+}
+
+/* Para dispositivos más grandes (desktops) */
+@media (min-width: 1024px) {
+  .image-container {
+    width: 90%; /* Más estrecho para desktops */
+    height: 90vh; /* Ajusta según necesidades */
+  }
+
+  .centered-content {
+    width: 60%; /* Ajuste de ancho para contenido centrado */
+    padding: 40px; /* Aumenta el padding */
+  }
+
+  .half-image {
+    height: 50vh; /* Ajusta si necesitas más espacio para cada imagen */
+  }
+}
+
+
+/* Estilos base para el pie de página */
+.site-footer {
+  background-color: #222; /* Un color de fondo oscuro para la elegancia */
+  color: #fff;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenido general del pie de página */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem; /* Espacio entre secciones */
+  justify-content: space-between;
+  align-items: start; /* Alinea los elementos al inicio */
+}
+
+/* Sección de texto del pie de página */
+.footer-text {
+  flex: 1 1 240px; /* Flexibilidad con un ancho base */
+  margin-right: 1rem; /* Espacio a la derecha */
+}
+.footer-text p {
+  margin-bottom: 20px; /* Ajusta este valor según necesites */
+}
+
+/* Enlaces del pie de página */
+.footer-link {
+  margin-top: 20px; /* Ajusta este valor según necesites */
+  color: #e50914; /* Color rojo para enlaces */
+  text-decoration: none;
+  padding: 0.5rem;
+  border: 2px solid #e50914; /* Bordes rojos */
+  border-radius: 0.25rem; /* Bordes redondeados */
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  background-color: #e50914;
+  color: #fff;
+}
+
+/* Navegación del pie de página */
+.footer-nav {
+  display: flex;
+  gap: 2rem; /* Espacio entre las columnas de navegación */
+}
+
+.footer-nav-section {
+  flex: 1;
+}
+
+.footer-nav-section h4 {
+  margin-bottom: 1rem;
+}
+
+.footer-nav-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav-section li + li {
+  margin-top: 0.5rem; /* Espacio entre elementos de la lista */
+}
+
+.footer-nav-section a {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-nav-section a:hover {
+  color: #ddd;
+}
+
+/* Sección de membresía */
+.footer-membership {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea los elementos a la izquierda */
+  gap: 0.5rem; /* Espacio entre texto e iconos */
+}
+
+.membership-icons {
+  display: flex;
+  gap: 0.5rem; /* Espacio entre iconos */
+}
+
+.membership-icons img {
+  width: 6rem; /* Tamaño de los iconos */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.membership-icons img:hover {
+  transform: scale(1.1); /* Efecto al pasar el mouse */
+}
+
+/* Botón de llamado a la acción en el pie de página */
+.footer-cta {
+  flex: 1 1 240px;
+  text-align: right; /* Alinea el botón a la derecha */
+}
+
+/* Estilos responsivos para móviles */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-text,
+  .footer-cta {
+    text-align: center;
+    flex-basis: 100%; /* Ocupa el ancho completo en dispositivos móviles */
+    margin: 1rem 0;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-nav-section {
+    text-align: center;
+  }
+
+  .footer-membership {
+    align-items: center;
+  }
+}
